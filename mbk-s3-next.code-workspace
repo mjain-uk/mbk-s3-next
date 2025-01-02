@@ -1,0 +1,14 @@
+{
+	"folders": [
+	  {
+		"path": "."
+	  }
+	],
+	"settings": {
+	  "typescript.tsdk": "node_modules/typescript/lib",
+	  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+	  "editor.defaultFormatter": "biomejs.biome",
+	  "editor.formatOnSave": true
+	}
+  }
+  

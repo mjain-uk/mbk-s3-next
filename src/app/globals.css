@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scrollbar-gutter: auto;
+}
+
+.home_section3--slide-pic {
+  @media screen and (min-width: 1024px) {
+    height: 600px;
+    width: 500px;
+  }
+}
+
+.imageContainer {
+  border: 1px solid red;
+  position: relative;
+  width: 100%; /* Ensures the image container takes full width of its parent */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio, adjust this value for different aspect ratios */
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    padding-top: 75%; /* Adjust aspect ratio for larger screens if needed */
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageContainer {
+    padding-top: 50%; /* Adjust aspect ratio for larger screens if needed */
+  }
+}
