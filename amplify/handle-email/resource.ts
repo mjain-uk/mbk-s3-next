@@ -1,6 +1,6 @@
 import { defineFunction } from "@aws-amplify/backend";
 
-export const handleEmailFunction = defineFunction({
-	name: "handle-email-function",
+export const handleEmail = defineFunction({
+	name: "handle-email",
 	entry: "./handler.ts",
 });
