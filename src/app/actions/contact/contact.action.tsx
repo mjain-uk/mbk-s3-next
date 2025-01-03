@@ -1,6 +1,14 @@
 "use server";
 import type { ContactFormSchema } from "@/app/actions/contact/zod.schema";
 import { z } from "zod";
+import type { Schema } from "../../../../amplify/data/resource";
+import { Amplify } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
+import outputs from "../../../../amplify_outputs.json";
+
+Amplify.configure(outputs);
+
+const client = generateClient<Schema>();
 
 type TContactForm = z.infer<typeof ContactFormSchema>;
 export type FormState = {
@@ -20,16 +28,9 @@ export async function onSubmitAction(
 	const formData = Object.fromEntries(data);
 
 	try {
-		const response = await fetch(
-			"https://main.d2cippkfpoeust.amplifyapp.com/api/handle-email",
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			},
-		);
+		const response = await client.queries.handleEmail({
+			body: formData,
+		});
 
 		const result = await response.json();
 
