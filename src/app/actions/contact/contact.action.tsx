@@ -29,14 +29,14 @@ export async function onSubmitAction(
 
 	try {
 		const response = await client.queries.handleEmail({
-			body: formData,
+			body: JSON.stringify(formData),
 		});
 
-		const result = await response.json();
+		const result = response.data;
 
-		if (result.success) {
-			return { success: true };
-		}
+		// 	if (result.success) {
+		// 	return { success: true };
+		// }
 		return {
 			success: false,
 			formErrors: ["Could not send the query. Try again later."],
