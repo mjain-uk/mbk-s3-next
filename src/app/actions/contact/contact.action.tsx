@@ -21,7 +21,7 @@ export async function onSubmitAction(
 
 	try {
 		const response = await fetch(
-			"https://main.d2cippkfpoeust.amplifyapp.com/api/handle-email-function",
+			"https://main.d2cippkfpoeust.amplifyapp.com/api/handle-email",
 			{
 				method: "POST",
 				headers: {
